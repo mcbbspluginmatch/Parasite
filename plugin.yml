@@ -1,0 +1,23 @@
+name: Parasite
+main: com.github.FulingBing.Parasite
+version: 1.0
+author: FulingBing
+commands:
+  para:
+    description: cmd
+permissions:
+  Parasite.*:
+    default: op
+    children:
+      Parasite.reload: true
+      Parasite.pass: true
+      Parasite.show: true
+      Parasite.set: true
+  Parasite.reload:
+    default: op
+  Parasite.pass:
+    default: op
+  Parasite.show:
+    default: op
+  Parasite.set:
+    default: op
