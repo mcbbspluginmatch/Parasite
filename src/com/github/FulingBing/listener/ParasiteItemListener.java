@@ -13,6 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import com.github.FulingBing.ParasiteData;
+import com.github.FulingBing.pojo.ParasitePlayer;
 import com.github.FulingBing.service.ParasiteCore;
 import com.github.FulingBing.service.ParasiteGUI;
 import com.github.FulingBing.service.ParasiteItem;
@@ -170,6 +171,56 @@ public class ParasiteItemListener implements Listener{
 								}
 							} catch (NoSuchMethodError e2) {
 								e.getPlayer().getInventory().setItemInHand(null);
+							}
+						}
+					}
+				}
+				return;
+			}
+			//ÖÎÁÆ£¨±¦ËþÌÇ£©
+			if(is.getType().equals(Material.GLOWSTONE_DUST)) {
+				ItemMeta im=is.getItemMeta();
+				if(im.hasDisplayName() && im.hasLore()) {
+					if(im.getDisplayName().endsWith(ParasiteData.getItemBtName()) && im.getLore().equals(ParasiteData.getItemBtLore())) {
+						e.setCancelled(true);
+						if(is.getAmount()>1) {
+							is.setAmount(is.getAmount()-1);
+						}else {
+							//is=null;
+							try {
+								if(e.getHand().equals(EquipmentSlot.HAND)) {
+									e.getPlayer().getInventory().setItemInMainHand(null);
+								}else {
+									e.getPlayer().getInventory().setItemInOffHand(null);
+								}
+							} catch (NoSuchMethodError e2) {
+								e.getPlayer().getInventory().setItemInHand(null);
+							}
+						}
+						String name=e.getPlayer().getName();
+						for(int i=0;i<ParasiteData.userinfo.size();i++) {
+							ParasitePlayer pp=ParasiteData.userinfo.get(i);
+							if(pp.name.equals(name)) {
+								if(pp.time[0]<18000) {
+									pp.time[0]-=100;
+									if(pp.time[0]<0) {
+										pp.time[0]=0;
+									}
+								}
+								if(pp.time[1]<18000) {
+									pp.time[1]-=100;
+									if(pp.time[1]<0) {
+										pp.time[1]=0;
+									}
+								}
+								if(pp.time[3]<18000) {
+									pp.time[3]-=100;
+									if(pp.time[3]<0) {
+										pp.time[3]=0;
+									}
+								}
+								ParasiteData.userinfo.set(i,pp);
+								return;
 							}
 						}
 					}

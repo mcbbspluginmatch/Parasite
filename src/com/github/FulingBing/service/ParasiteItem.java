@@ -60,6 +60,11 @@ public class ParasiteItem {
 		im.setDisplayName(ParasiteData.getItemNoName());
 		is.setItemMeta(im);
 		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(2))).setIngredient('Y',Material.ICE));//±ù
+		is.setType(Material.GLOWSTONE_DUST);
+		im.setDisplayName(ParasiteData.getItemBtName());
+		im.setLore(ParasiteData.getItemBtLore());
+		is.setItemMeta(im);
+		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(3))).setIngredient('Y',Material.SUGAR));//Ð¡ÂóÖÖ×Ó£¬ÌÇ
 		return re;
 	}
 	
@@ -96,13 +101,13 @@ public class ParasiteItem {
 										String s="¡ìa"+ParasiteData.ParasiteName[i]+"¡ìb: ¡ìd";
 										boolean jc=true;
 										if(type==0) {
-											if(i==2 || i==5) {
+											if(i==2 || i==4 || i==5) {
 												jc=true;
 											}else {
 												jc=false;
 											}
 										}else {
-											if(i==2 || i==5) {
+											if(i==2 || i==4 || i==5) {
 												jc=false;
 											}else {
 												jc=true;

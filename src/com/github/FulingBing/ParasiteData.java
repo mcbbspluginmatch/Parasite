@@ -41,6 +41,7 @@ public class ParasiteData {
 	private static String typeGLASS_PANE=null;
 	private static String typeCOMPARATOR=null;
 	private static String typeSNOWBALL=null;
+	private static String typeWHEAT_SEEDS=null;
 	public static String fuckBukkit(int fuck) {
 		if(typeGLASS_PANE==null) {
 			Material[] lm=Material.values();
@@ -49,6 +50,7 @@ public class ParasiteData {
 					typeGLASS_PANE="GLASS_PANE";
 					typeCOMPARATOR="COMPARATOR";
 					typeSNOWBALL="SNOWBALL";
+					typeWHEAT_SEEDS="WHEAT_SEEDS";
 					break;
 				}
 			}
@@ -57,14 +59,17 @@ public class ParasiteData {
 			typeGLASS_PANE="STAINED_GLASS_PANE";
 			typeCOMPARATOR="REDSTONE_COMPARATOR";
 			typeSNOWBALL="SNOW_BALL";
+			typeWHEAT_SEEDS="SEEDS";
 		}
 		switch (fuck) {
 		case 0:
 			return typeGLASS_PANE;
 		case 1:
 			return typeCOMPARATOR;
-		default:
+		case 2:
 			return typeSNOWBALL;
+		default:
+			return typeWHEAT_SEEDS;
 		}
 	}
 	
@@ -83,6 +88,9 @@ public class ParasiteData {
 	}
 	public static String getItemNoName() {
 		return "§b寄生虫预防药物";
+	}
+	public static String getItemBtName() {
+		return "§e宝塔糖";
 	}
 	public static List<String> getItemCureLore() {
 		List<String> re=new ArrayList<String>();
@@ -122,6 +130,13 @@ public class ParasiteData {
 		List<String> re=new ArrayList<String>();
 		re.add("§a可短时间内减少感染寄生虫的几率");
 		re.add("§e随着时间的流逝，药效会逐渐减弱");
+		re.add("§b点击服用");
+		return re;
+	}
+	public static List<String> getItemBtLore() {
+		List<String> re=new ArrayList<String>();
+		re.add("§a可小幅度减少肠道内的寄生虫的数量");
+		re.add("§e若感染程度发展到二阶段，则药效微乎其微");
 		re.add("§b点击服用");
 		return re;
 	}
