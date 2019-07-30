@@ -47,7 +47,7 @@ public class Parasite extends JavaPlugin{
 			}
 		}
 		/*try{
-			ParasiteData.data=YamlConfiguration.loadConfiguration(ParasiteData.file); **Fuck Bukkit**
+			ParasiteData.data=YamlConfiguration.loadConfiguration(ParasiteData.file);
 		}catch(Exception e){
 			ParasiteData.data=null;
 			getLogger().info("加载出错，插件停用");

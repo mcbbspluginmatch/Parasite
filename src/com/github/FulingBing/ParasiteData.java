@@ -42,7 +42,7 @@ public class ParasiteData {
 	private static String typeCOMPARATOR=null;
 	private static String typeSNOWBALL=null;
 	private static String typeWHEAT_SEEDS=null;
-	public static String fuckBukkit(int fuck) {
+	public static String valueBukkit(int type) {
 		if(typeGLASS_PANE==null) {
 			Material[] lm=Material.values();
 			for(Material m:lm) {
@@ -61,7 +61,7 @@ public class ParasiteData {
 			typeSNOWBALL="SNOW_BALL";
 			typeWHEAT_SEEDS="SEEDS";
 		}
-		switch (fuck) {
+		switch (type) {
 		case 0:
 			return typeGLASS_PANE;
 		case 1:
