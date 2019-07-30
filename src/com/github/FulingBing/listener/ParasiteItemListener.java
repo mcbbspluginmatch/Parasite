@@ -102,7 +102,7 @@ public class ParasiteItemListener implements Listener{
 				return;
 			}
 			//检测样本
-			if(is.getType().name().startsWith(ParasiteData.fuckBukkit(1))) {
+			if(is.getType().name().startsWith(ParasiteData.valueBukkit(1))) {
 				ItemMeta im=is.getItemMeta();
 				if(im.hasDisplayName() && im.hasLore()) {
 					if(im.getDisplayName().endsWith(ParasiteData.getItemLoName()) && im.getLore().equals(ParasiteData.getItemLoLore())) {
@@ -117,7 +117,7 @@ public class ParasiteItemListener implements Listener{
 				return;
 			}
 			//药物
-			if(is.getType().equals(Material.getMaterial(ParasiteData.fuckBukkit(2)))) {
+			if(is.getType().equals(Material.getMaterial(ParasiteData.valueBukkit(2)))) {
 				ItemMeta im=is.getItemMeta();
 				if(im.hasDisplayName() && im.hasLore()) {
 					//治疗
