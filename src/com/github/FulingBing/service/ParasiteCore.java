@@ -376,17 +376,17 @@ public class ParasiteCore {
 				try {
 					bw.close();
 				} catch (IOException e1) {}
-            }
+			}
 			if(osw!=null) {
 				try {
 					osw.close();
 				} catch (IOException e1) {}
-            }
+			}
 			if(fos!=null) {
 				try {
 					fos.close();
 				} catch (IOException e1) {}
-            }
+			}
 		}
 	}
 	
@@ -398,12 +398,12 @@ public class ParasiteCore {
 		BufferedReader reader=null;
 		try {
 			reader=new BufferedReader(new FileReader(ParasiteData.file));
-            String tmp=null;
-            while ((tmp=reader.readLine())!=null) {
-            	if(!tmp.isEmpty()) {
-            		ParasiteData.userinfo.add(StrToData(tmp));
-            	}
-            }
+			String tmp=null;
+			while ((tmp=reader.readLine())!=null) {
+				if(!tmp.isEmpty()) {
+					ParasiteData.userinfo.add(StrToData(tmp));
+				}
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("[Parasite] 读取数据失败");
@@ -412,9 +412,9 @@ public class ParasiteCore {
 				try {
 					reader.close();
 				} catch (IOException e1) {}
-            }
+			}
 		}
-    }
+	}
 	
 	//感染级别减少一个等级
 	public static int removeLv(int lv) {

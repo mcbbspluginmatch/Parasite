@@ -30,41 +30,41 @@ public class ParasiteItem {
 		is.setItemMeta(im);
 		re.add(new ShapedRecipe(is).shape(new String[] { "X X", "X X", "XXX" }).setIngredient('X',Material.GLASS));
 		//ÒÇÆ÷
-		is.setType(Material.getMaterial(ParasiteData.fuckBukkit(1)));
+		is.setType(Material.getMaterial(ParasiteData.valueBukkit(1)));
 		im.setDisplayName(ParasiteData.getItemLoName());
 		im.setLore(ParasiteData.getItemLoLore());
 		is.setItemMeta(im);
-		re.add(new ShapedRecipe(is).shape(new String[] { " X ", " Y ", " Z " }).setIngredient('X',Material.DIAMOND).setIngredient('Y',Material.getMaterial(ParasiteData.fuckBukkit(1))).setIngredient('Z',Material.COMPASS));
+		re.add(new ShapedRecipe(is).shape(new String[] { " X ", " Y ", " Z " }).setIngredient('X',Material.DIAMOND).setIngredient('Y',Material.getMaterial(ParasiteData.valueBukkit(1))).setIngredient('Z',Material.COMPASS));
 		//Ò©Îï
-		is.setType(Material.getMaterial(ParasiteData.fuckBukkit(2)));
+		is.setType(Material.getMaterial(ParasiteData.valueBukkit(2)));
 		im.setLore(ParasiteData.getItemCureLore());
 		im.setDisplayName(ParasiteData.getItemCureName()+ParasiteData.ParasiteName[0]);
 		is.setItemMeta(im);
-		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(2))).setIngredient('Y',Material.MAGMA_CREAM));//ÑÒ½¬¸à
+		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.valueBukkit(2))).setIngredient('Y',Material.MAGMA_CREAM));//ÑÒ½¬¸à
 		im.setDisplayName(ParasiteData.getItemCureName()+ParasiteData.ParasiteName[1]);
 		is.setItemMeta(im);
-		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(2))).setIngredient('Y',Material.GHAST_TEAR));//¶ñ»êÖ®Àá
+		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.valueBukkit(2))).setIngredient('Y',Material.GHAST_TEAR));//¶ñ»êÖ®Àá
 		im.setDisplayName(ParasiteData.getItemCureName()+ParasiteData.ParasiteName[2]);
 		is.setItemMeta(im);
-		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(2))).setIngredient('Y',Material.FERMENTED_SPIDER_EYE));//·¢½ÍÖ©ÖëÑÛ
+		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.valueBukkit(2))).setIngredient('Y',Material.FERMENTED_SPIDER_EYE));//·¢½ÍÖ©ÖëÑÛ
 		im.setDisplayName(ParasiteData.getItemCureName()+ParasiteData.ParasiteName[3]);
 		is.setItemMeta(im);
-		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", " Z " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(2))).setIngredient('Y',Material.SUGAR).setIngredient('Z',Material.EGG));//ÌÇ,¼¦µ°
+		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", " Z " }).setIngredient('X',Material.getMaterial(ParasiteData.valueBukkit(2))).setIngredient('Y',Material.SUGAR).setIngredient('Z',Material.EGG));//ÌÇ,¼¦µ°
 		im.setDisplayName(ParasiteData.getItemCureName()+ParasiteData.ParasiteName[4]);
 		is.setItemMeta(im);
-		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", " Z " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(2))).setIngredient('Y',Material.SUGAR).setIngredient('Z',Material.MELON));//ÌÇ,Î÷¹Ï
+		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", " Z " }).setIngredient('X',Material.getMaterial(ParasiteData.valueBukkit(2))).setIngredient('Y',Material.SUGAR).setIngredient('Z',Material.MELON));//ÌÇ,Î÷¹Ï
 		im.setDisplayName(ParasiteData.getItemCureName()+ParasiteData.ParasiteName[5]);
 		is.setItemMeta(im);
-		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(2))).setIngredient('Y',Material.GOLDEN_CARROT));//½ðºúÂÜ²·
+		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.valueBukkit(2))).setIngredient('Y',Material.GOLDEN_CARROT));//½ðºúÂÜ²·
 		im.setLore(ParasiteData.getItemNoLore());
 		im.setDisplayName(ParasiteData.getItemNoName());
 		is.setItemMeta(im);
-		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(2))).setIngredient('Y',Material.ICE));//±ù
+		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.valueBukkit(2))).setIngredient('Y',Material.ICE));//±ù
 		is.setType(Material.GLOWSTONE_DUST);
 		im.setDisplayName(ParasiteData.getItemBtName());
 		im.setLore(ParasiteData.getItemBtLore());
 		is.setItemMeta(im);
-		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " X ", "   " }).setIngredient('X',Material.getMaterial(ParasiteData.fuckBukkit(3))).setIngredient('Y',Material.SUGAR));//Ð¡ÂóÖÖ×Ó£¬ÌÇ
+		re.add(new ShapedRecipe(is).shape(new String[] { " Y ", " Z ", " X " }).setIngredient('X',Material.getMaterial(ParasiteData.valueBukkit(3))).setIngredient('Y',Material.SUGAR).setIngredient('Z',Material.GLOWSTONE_DUST));//Ð¡ÂóÖÖ×Ó£¬Ó©Ê¯·Û£¬ÌÇ
 		return re;
 	}
 	

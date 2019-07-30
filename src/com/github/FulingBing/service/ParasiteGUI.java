@@ -13,7 +13,7 @@ public class ParasiteGUI {
 	//¼ì²âÒÇÆ÷µÄ½çÃæ
 	public Inventory openLook(Player pl) {
 		Inventory re=Bukkit.createInventory(pl,27,ParasiteData.getGUITitle());
-		ItemStack is=new ItemStack(Material.getMaterial(ParasiteData.fuckBukkit(0)));
+		ItemStack is=new ItemStack(Material.getMaterial(ParasiteData.valueBukkit(0)));
 		re.setItem(3, is);
 		re.setItem(4, is);
 		re.setItem(5, is);
