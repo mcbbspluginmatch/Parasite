@@ -10,10 +10,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 import com.github.FulingBing.ParasiteData;
 
 public class ParasiteGUI {
-	//¼ì²âÒÇÆ÷µÄ½çÃæ
+	//æ£€æµ‹ä»ªå™¨çš„ç•Œé¢
 	public Inventory openLook(Player pl) {
 		Inventory re=Bukkit.createInventory(pl,27,ParasiteData.getGUITitle());
 		ItemStack is=new ItemStack(Material.getMaterial(ParasiteData.valueBukkit(0)));
+		//ç”¨ä¸ªforå§ â€”â€” mimimis
 		re.setItem(3, is);
 		re.setItem(4, is);
 		re.setItem(5, is);
@@ -31,7 +32,7 @@ public class ParasiteGUI {
 		re.setItem(25, is);
 		re.setItem(26, is);
 		ItemMeta im=is.getItemMeta();
-		im.setDisplayName("¡ìbÔÚ´Ë´¦·ÅÈëÑù±¾");
+		im.setDisplayName("Â§båœ¨æ­¤å¤„æ”¾å…¥æ ·æœ¬");
 		is.setItemMeta(im);
 		re.setItem(0, is);
 		re.setItem(1, is);
@@ -42,7 +43,7 @@ public class ParasiteGUI {
 		re.setItem(19, is);
 		re.setItem(20, is);
 		is.setType(Material.REDSTONE_BLOCK);
-		im.setDisplayName("¡ìaµã»÷¼ì²â");
+		im.setDisplayName("Â§aç‚¹å‡»æ£€æµ‹");
 		is.setItemMeta(im);
 		re.setItem(13, is);
 		return re;
