@@ -20,7 +20,11 @@ import com.github.FulingBing.pojo.ParasiteEffect;
 import com.github.FulingBing.pojo.ParasitePlayer;
 import com.github.FulingBing.pojo.ParasiteState;
 
+// 所有数据以一个6长度int数组表示，可维护性差，可读性也差，可拓展性也差
+// 建议再做抽象，对每种数据单独表示
+// 以增加一种寄生虫只需要改动对应的类而不是满世界找int数组为妙 —— 754503921
 public class ParasiteCore {
+	// 既然每个方法给了注释，可以更换为 Javadocs —— 754503921
 	//玩家数据转换为字符串，用于文件存储
 	public static String DataToStr(ParasitePlayer pp) {
 		return pp.name+","+pp.time[0]+","+pp.time[1]+","+pp.time[2]+","+pp.time[3]+","+pp.time[4]+","+pp.time[5]+","

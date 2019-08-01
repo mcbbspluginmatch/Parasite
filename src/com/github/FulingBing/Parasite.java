@@ -19,6 +19,8 @@ import com.github.FulingBing.service.ParasiteCore;
 import com.github.FulingBing.service.ParasiteItem;
 import com.github.FulingBing.service.ParasiteRun;
 
+// 未使用包管理器
+// 文件编码为 GBK 而非 UTF-8 —— 754503921
 public class Parasite extends JavaPlugin{
 	/*
 	
@@ -66,6 +68,8 @@ public class Parasite extends JavaPlugin{
 		}
 		//开启循环任务
 		Timer timer=new Timer();
+		// 使用 timer 并不是值得推荐的，当任务执行时抛出异常会出现不可预料的情况
+		// 为什么不用 Bukkit 的 Scheduler 呢 —— 754503921
 		ParasiteData.runtime_1=0;
 		ParasiteData.runtime_5=0;
 		ParasiteData.runtime_300=0;

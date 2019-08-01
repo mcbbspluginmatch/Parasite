@@ -14,6 +14,7 @@ import com.github.FulingBing.ParasiteData;
 import com.github.FulingBing.pojo.ParasitePlayer;
 
 public class ParasiteItem {
+	// Ó²±àÂë ¡ª¡ª 754503921
 	//ºÏ³É±í
 	@SuppressWarnings("deprecation")
 	public List<Recipe> getRecipe(){

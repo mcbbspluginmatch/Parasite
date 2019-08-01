@@ -21,6 +21,8 @@ import com.github.FulingBing.service.ParasiteItem;
 public class ParasiteItemListener implements Listener{
 	@EventHandler(priority = EventPriority.HIGH)
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
+		// 一个方法不宜太长，读起来会让人思维混乱
+		// 既然已经在某些地方做了注释，完全可以将注释的地方分别提取方法 —— 754503921
 		if((e.getAction()==Action.RIGHT_CLICK_AIR) || (e.getAction()==Action.LEFT_CLICK_AIR) || (e.getAction()==Action.RIGHT_CLICK_BLOCK) || (e.getAction()==Action.LEFT_CLICK_BLOCK) || (e.getAction()==Action.PHYSICAL)){
 			ItemStack is=e.getItem();
 			if(is==null){
@@ -41,6 +43,7 @@ public class ParasiteItemListener implements Listener{
 							return;
 						}
 						pl.setHealth(hp);
+						// 制作样本的代码重复出现，可以提取为一个方法 —— 754503921
 						im.setLore(ParasiteData.getItemLoreUse(pl.getName()));
 						if(is.getAmount()>1) {
 							is.setAmount(is.getAmount()-1);
