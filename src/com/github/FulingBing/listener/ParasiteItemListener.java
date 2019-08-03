@@ -21,14 +21,15 @@ import com.github.FulingBing.service.ParasiteItem;
 public class ParasiteItemListener implements Listener{
 	@EventHandler(priority = EventPriority.HIGH)
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
-		// Ò»¸ö·½·¨²»ÒËÌ«³¤£¬¶ÁÆğÀ´»áÈÃÈËË¼Î¬»ìÂÒ
-		// ¼ÈÈ»ÒÑ¾­ÔÚÄ³Ğ©µØ·½×öÁË×¢ÊÍ£¬ÍêÈ«¿ÉÒÔ½«×¢ÊÍµÄµØ·½·Ö±ğÌáÈ¡·½·¨ ¡ª¡ª 754503921
+		// è¿™ä¸ªæ–¹æ³•å•Šä»–æ˜¯çœŸæ»´é•¿,å»ºè®®å¦‚ä¸‹æµ·èºè¯´çš„ â€”â€” æ˜Ÿç©º
+		// ä¸€ä¸ªæ–¹æ³•ä¸å®œå¤ªé•¿ï¼Œè¯»èµ·æ¥ä¼šè®©äººæ€ç»´æ··ä¹±
+		// æ—¢ç„¶å·²ç»åœ¨æŸäº›åœ°æ–¹åšäº†æ³¨é‡Šï¼Œå®Œå…¨å¯ä»¥å°†æ³¨é‡Šçš„åœ°æ–¹åˆ†åˆ«æå–æ–¹æ³• â€”â€” 754503921
 		if((e.getAction()==Action.RIGHT_CLICK_AIR) || (e.getAction()==Action.LEFT_CLICK_AIR) || (e.getAction()==Action.RIGHT_CLICK_BLOCK) || (e.getAction()==Action.LEFT_CLICK_BLOCK) || (e.getAction()==Action.PHYSICAL)){
 			ItemStack is=e.getItem();
 			if(is==null){
 				return;
 			}
-			//»ñÈ¡Ñù±¾
+			//è·å–æ ·æœ¬
 			if(is.getType().equals(Material.GLASS_BOTTLE)) {
 				ItemMeta im=is.getItemMeta();
 				if(im.hasDisplayName() && im.hasLore()) {
@@ -39,25 +40,25 @@ public class ParasiteItemListener implements Listener{
 						if(hp>1) {
 							hp--;
 						}else {
-							pl.sendMessage("¡ìeÄãÊ£ÓàµÄÉúÃüÖµÌ«ÉÙ£¬²»×ãÒÔÖÆ×÷Ñù±¾");
+							pl.sendMessage("Â§eä½ å‰©ä½™çš„ç”Ÿå‘½å€¼å¤ªå°‘ï¼Œä¸è¶³ä»¥åˆ¶ä½œæ ·æœ¬");
 							return;
 						}
 						pl.setHealth(hp);
-						// ÖÆ×÷Ñù±¾µÄ´úÂëÖØ¸´³öÏÖ£¬¿ÉÒÔÌáÈ¡ÎªÒ»¸ö·½·¨ ¡ª¡ª 754503921
+						// åˆ¶ä½œæ ·æœ¬çš„ä»£ç é‡å¤å‡ºç°ï¼Œå¯ä»¥æå–ä¸ºä¸€ä¸ªæ–¹æ³• â€”â€” 754503921
 						im.setLore(ParasiteData.getItemLoreUse(pl.getName()));
 						if(is.getAmount()>1) {
 							is.setAmount(is.getAmount()-1);
 						}else {
 							//is=null;
 							try {
-								//ÓĞË«³ÖµÄmc
+								//æœ‰åŒæŒçš„mc
 								if(e.getHand().equals(EquipmentSlot.HAND)) {
 									pl.getInventory().setItemInMainHand(null);
 								}else {
 									pl.getInventory().setItemInOffHand(null);
 								}
 							} catch (NoSuchMethodError e2) {
-								//Ã»ÓĞË«³ÖµÄmc
+								//æ²¡æœ‰åŒæŒçš„mc
 								pl.getInventory().setItemInHand(null);
 							}
 						}
@@ -75,7 +76,7 @@ public class ParasiteItemListener implements Listener{
 						if(fo>1) {
 							fo--;
 						}else {
-							pl.sendMessage("¡ìeÄãÊ£ÓàµÄ¼¢¶öÖµÌ«ÉÙ£¬²»×ãÒÔÖÆ×÷Ñù±¾");
+							pl.sendMessage("Â§eä½ å‰©ä½™çš„é¥¥é¥¿å€¼å¤ªå°‘ï¼Œä¸è¶³ä»¥åˆ¶ä½œæ ·æœ¬");
 							return;
 						}
 						pl.setFoodLevel(fo);
@@ -104,7 +105,7 @@ public class ParasiteItemListener implements Listener{
 				}
 				return;
 			}
-			//¼ì²âÑù±¾
+			//æ£€æµ‹æ ·æœ¬
 			if(is.getType().name().startsWith(ParasiteData.valueBukkit(1))) {
 				ItemMeta im=is.getItemMeta();
 				if(im.hasDisplayName() && im.hasLore()) {
@@ -119,11 +120,11 @@ public class ParasiteItemListener implements Listener{
 				}
 				return;
 			}
-			//Ò©Îï
+			//è¯ç‰©
 			if(is.getType().equals(Material.getMaterial(ParasiteData.valueBukkit(2)))) {
 				ItemMeta im=is.getItemMeta();
 				if(im.hasDisplayName() && im.hasLore()) {
-					//ÖÎÁÆ
+					//æ²»ç–—
 					if(im.getDisplayName().contains(ParasiteData.getItemCureName()) && im.getLore().equals(ParasiteData.getItemCureLore())) {
 						ParasiteCore pc=new ParasiteCore();
 						int id=pc.getParasIdBuName(im.getDisplayName().replaceAll(ParasiteData.getItemCureName(),""));
@@ -147,7 +148,7 @@ public class ParasiteItemListener implements Listener{
 						}
 						return;
 					}
-					//Ô¤·À
+					//é¢„é˜²
 					if(im.getDisplayName().endsWith(ParasiteData.getItemNoName()) && im.getLore().equals(ParasiteData.getItemNoLore())) {
 						boolean have=false;
 						for(int i=0;i<ParasiteData.noParasite.size();i++) {
@@ -180,7 +181,7 @@ public class ParasiteItemListener implements Listener{
 				}
 				return;
 			}
-			//ÖÎÁÆ£¨±¦ËşÌÇ£©
+			//æ²»ç–—ï¼ˆå®å¡”ç³–ï¼‰
 			if(is.getType().equals(Material.GLOWSTONE_DUST)) {
 				ItemMeta im=is.getItemMeta();
 				if(im.hasDisplayName() && im.hasLore()) {
@@ -243,7 +244,7 @@ public class ParasiteItemListener implements Listener{
 			return;
 		}
 		if(title.endsWith(ParasiteData.getGUITitle()) && e.getInventory().getSize()==27) {
-			//¼ì²âÑù±¾
+			//æ£€æµ‹æ ·æœ¬
 			int i=e.getRawSlot();
 			if(i<27) {
 				if(i==10 || i==13 || i==16) {
