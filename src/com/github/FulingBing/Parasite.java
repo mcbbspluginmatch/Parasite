@@ -19,17 +19,18 @@ import com.github.FulingBing.service.ParasiteCore;
 import com.github.FulingBing.service.ParasiteItem;
 import com.github.FulingBing.service.ParasiteRun;
 
-// Î´Ê¹ÓÃ°ü¹ÜÀíÆ÷
-// ÎÄ¼ş±àÂëÎª GBK ¶ø·Ç UTF-8 ¡ª¡ª 754503921
+// å”‰å±…ç„¶æ˜¯ GBK ç¼–ç  æ¨èä½¿ç”¨ UTF-8 â€”â€” æ˜Ÿç©º
+// æœªä½¿ç”¨åŒ…ç®¡ç†å™¨
+// æ–‡ä»¶ç¼–ç ä¸º GBK è€Œé UTF-8 â€”â€” 754503921
 public class Parasite extends JavaPlugin{
 	/*
 	
-	¹³³æ£¬ËüÍ¨¹ıÊÜÎÛÈ¾µÄË®¡¢Ë®¹ûºÍÊß²Ë½øÈëÈËÌå¡£Ö¢×´£ºĞéÈõ¡¢¸¹Í´¡¢¶ñĞÄ¡¢¸¹Ğº¡¢Æ¶Ñª
-	»×³æ£¬Í¨¹ıÉãÊ³´«²¥¡£Ö¢×´£º·¢ÉÕ¡¢Æ£ÀÍ¡¢¹ıÃô¡¢Æ¤Õî¡¢Å»ÍÂ¡¢¸¹Ğº¡¢Éñ¾­ÎÊÌâ¡¢´­Ï¢ºÍ¿ÈËÔ
-	ÑªÎü³æ£¬½Ó´¥µ½ÊÜÎÛÈ¾µÄË®ºó£¬ÑªÎü³æ¾Í»á´ÌÆÆËûÃÇµÄÆ¤·ô¡£Ö¢×´£º·¢ÈÈ¡¢ÌÛÍ´¡¢¿ÈËÔ¡¢¸¹Ğº¡¢Ö×ÕÍ¡¢Í·»è
-	ÌĞ³æ£¬Í¨¹ıÎÛÈ¾Ê³Æ·´«²¥£¬Ö¢×´£º¶ñĞÄ¡¢Å»ÍÂ¡¢ÄÚÔà·¢Ñ×¡¢¸¹Ğº¡¢ÌåÖØ¼õÇá¡¢Í·ÔÎÑÛ»¨¡¢¾·ÂÎ¡¢ÓªÑø²»Á¼
-	¹­ĞÎ³æ£¬Í¨¹ı³Ô²»ÊìµÄÈâ»òÕß±§±»¸ĞÈ¾µÄ³èÎï¸ĞÈ¾ÕâÖÖ¼ÄÉú³æ¡£Ö¢×´£ºÁ÷¸ĞÖ¢×´¡¢·¢ÉÕ¡¢º®Õ½¡¢ĞéÈõ¡¢Í·ÌÛ
-	Å±Ô­³æ£¬Îª°´ÎÃ´«²¥µÄæß×Ó³æ£¬ÊÇÅ±¼²µÄ²¡Ô­Ìå¡£Ö¢×´£º·¢ÈÈ¡¢Æ¶Ñª
+	é’©è™«ï¼Œå®ƒé€šè¿‡å—æ±¡æŸ“çš„æ°´ã€æ°´æœå’Œè”¬èœè¿›å…¥äººä½“ã€‚ç—‡çŠ¶ï¼šè™šå¼±ã€è…¹ç—›ã€æ¶å¿ƒã€è…¹æ³»ã€è´«è¡€
+	è›”è™«ï¼Œé€šè¿‡æ‘„é£Ÿä¼ æ’­ã€‚ç—‡çŠ¶ï¼šå‘çƒ§ã€ç–²åŠ³ã€è¿‡æ•ã€çš®ç–¹ã€å‘•åã€è…¹æ³»ã€ç¥ç»é—®é¢˜ã€å–˜æ¯å’Œå’³å—½
+	è¡€å¸è™«ï¼Œæ¥è§¦åˆ°å—æ±¡æŸ“çš„æ°´åï¼Œè¡€å¸è™«å°±ä¼šåˆºç ´ä»–ä»¬çš„çš®è‚¤ã€‚ç—‡çŠ¶ï¼šå‘çƒ­ã€ç–¼ç—›ã€å’³å—½ã€è…¹æ³»ã€è‚¿èƒ€ã€å¤´æ˜
+	ç»¦è™«ï¼Œé€šè¿‡æ±¡æŸ“é£Ÿå“ä¼ æ’­ï¼Œç—‡çŠ¶ï¼šæ¶å¿ƒã€å‘•åã€å†…è„å‘ç‚ã€è…¹æ³»ã€ä½“é‡å‡è½»ã€å¤´æ™•çœ¼èŠ±ã€ç—‰æŒ›ã€è¥å…»ä¸è‰¯
+	å¼“å½¢è™«ï¼Œé€šè¿‡åƒä¸ç†Ÿçš„è‚‰æˆ–è€…æŠ±è¢«æ„ŸæŸ“çš„å® ç‰©æ„ŸæŸ“è¿™ç§å¯„ç”Ÿè™«ã€‚ç—‡çŠ¶ï¼šæµæ„Ÿç—‡çŠ¶ã€å‘çƒ§ã€å¯’æˆ˜ã€è™šå¼±ã€å¤´ç–¼
+	ç–ŸåŸè™«ï¼Œä¸ºæŒ‰èšŠä¼ æ’­çš„å­¢å­è™«ï¼Œæ˜¯ç–Ÿç–¾çš„ç—…åŸä½“ã€‚ç—‡çŠ¶ï¼šå‘çƒ­ã€è´«è¡€
 	
 	*/
 	public void onEnable() {
@@ -43,7 +44,7 @@ public class Parasite extends JavaPlugin{
 				ParasiteData.file.createNewFile();
 			} catch (IOException e) {
 				e.printStackTrace();
-				getLogger().info("ÎŞ·¨´´½¨Êı¾İ£¬²å¼şÍ£ÓÃ");
+				getLogger().info("æ— æ³•åˆ›å»ºæ•°æ®ï¼Œæ’ä»¶åœç”¨");
 				getServer().getPluginManager().disablePlugin(this);
 				return;
 			}
@@ -52,7 +53,7 @@ public class Parasite extends JavaPlugin{
 			ParasiteData.data=YamlConfiguration.loadConfiguration(ParasiteData.file);
 		}catch(Exception e){
 			ParasiteData.data=null;
-			getLogger().info("¼ÓÔØ³ö´í£¬²å¼şÍ£ÓÃ");
+			getLogger().info("åŠ è½½å‡ºé”™ï¼Œæ’ä»¶åœç”¨");
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		}*/
@@ -61,33 +62,33 @@ public class Parasite extends JavaPlugin{
 		ParasiteData.plugin=this;
 		Bukkit.getPluginManager().registerEvents(new ParasitePlayerListener(),this);
 		Bukkit.getPluginManager().registerEvents(new ParasiteItemListener(),this);
-		//¼ÓÈëºÏ³É±í
+		//åŠ å…¥åˆæˆè¡¨
 		List<Recipe> lr=(new ParasiteItem()).getRecipe();
 		for(Recipe r:lr) {
 			getServer().addRecipe(r);
 		}
-		//¿ªÆôÑ­»·ÈÎÎñ
+		//å¼€å¯å¾ªç¯ä»»åŠ¡
 		Timer timer=new Timer();
-		// Ê¹ÓÃ timer ²¢²»ÊÇÖµµÃÍÆ¼öµÄ£¬µ±ÈÎÎñÖ´ĞĞÊ±Å×³öÒì³£»á³öÏÖ²»¿ÉÔ¤ÁÏµÄÇé¿ö
-		// ÎªÊ²Ã´²»ÓÃ Bukkit µÄ Scheduler ÄØ ¡ª¡ª 754503921
+		// ä½¿ç”¨ timer å¹¶ä¸æ˜¯å€¼å¾—æ¨èçš„ï¼Œå½“ä»»åŠ¡æ‰§è¡Œæ—¶æŠ›å‡ºå¼‚å¸¸ä¼šå‡ºç°ä¸å¯é¢„æ–™çš„æƒ…å†µ
+		// ä¸ºä»€ä¹ˆä¸ç”¨ Bukkit çš„ Scheduler å‘¢ â€”â€” 754503921
 		ParasiteData.runtime_1=0;
 		ParasiteData.runtime_5=0;
 		ParasiteData.runtime_300=0;
 		timer.schedule(new ParasiteRun(),500,500);
-		getLogger().info("²å¼şÆôÓÃ");
+		getLogger().info("æ’ä»¶å¯ç”¨");
 	}
 
 	public void onDisable() {
 		//if(ParasiteData.data==null) {
 		//	return;
 		//}
-		getLogger().info("ÕıÔÚ±£´æÊı¾İ");
+		getLogger().info("æ­£åœ¨ä¿å­˜æ•°æ®");
 		ParasiteCore.saveUserData();
-		getLogger().info("²å¼şÍ£ÓÃ");
+		getLogger().info("æ’ä»¶åœç”¨");
 	}
 	
 	public void readsize(){
-		//¶ÁÈ¡²å¼şÅäÖÃ
+		//è¯»å–æ’ä»¶é…ç½®
 		ParasiteData.ItemProbability=getConfig().getDouble("ItemProbability");
 		ParasiteData.LocProbability=getConfig().getDouble("LocProbability");
 		ParasiteData.Misdiagnosis=getConfig().getDouble("Misdiagnosis");
@@ -99,7 +100,7 @@ public class Parasite extends JavaPlugin{
 		ParasiteData.DampBiomes=getConfig().getStringList("DampBiomes");
 		ParasiteData.Water=getConfig().getStringList("Water");
 		ParasiteData.DeathClear=getConfig().getBoolean("DeathClear");
-		//¶ÁÈ¡Íæ¼ÒÊı¾İ
+		//è¯»å–ç©å®¶æ•°æ®
 		/*if(readPlayer) {
 			if(!ParasiteData.userinfo.isEmpty()) {
 				ParasiteData.userinfo.clear();
@@ -112,80 +113,81 @@ public class Parasite extends JavaPlugin{
 		}*/
 	}
 	
+	// ä¸ªäººæ¯”è¾ƒå»ºè®®å‘½ä»¤ç±»ç”¨æ¥å£æ¥åˆ†å¼€å†™subCommandå¯è¯»æ€§åº”è¯¥ä¼šæ¯”è¾ƒé«˜ä¸€ç‚¹~ â€”â€” æ˜Ÿç©º
 	public boolean onCommand(CommandSender sender,Command cmd,String label,String[] args){
 		if(args.length>0) {
 			if(args[0].equalsIgnoreCase("reload")) {
 				if(sender instanceof Player) {
 					if(!((Player)sender).hasPermission("Parasite.reload")) {
-						sender.sendMessage("¡ìeÄãÃ»ÓĞÈ¨ÏŞÖ´ĞĞÕâ¸öÖ¸Áî");
+						sender.sendMessage("Â§eä½ æ²¡æœ‰æƒé™æ‰§è¡Œè¿™ä¸ªæŒ‡ä»¤");
 						return false;
 					}
 				}
 				reloadConfig();
 				readsize();
-				sender.sendMessage("¡ìaÖØÔØ³É¹¦");
+				sender.sendMessage("Â§aé‡è½½æˆåŠŸ");
 				return true;
 			}
 			if(args[0].equalsIgnoreCase("show")) {
 				if(sender instanceof Player) {
 					if(!((Player)sender).hasPermission("Parasite.show")) {
-						sender.sendMessage("¡ìeÄãÃ»ÓĞÈ¨ÏŞÖ´ĞĞÕâ¸öÖ¸Áî");
+						sender.sendMessage("Â§eä½ æ²¡æœ‰æƒé™æ‰§è¡Œè¿™ä¸ªæŒ‡ä»¤");
 						return false;
 					}
 				}
 				if(args.length>1) {
 					for(ParasitePlayer tpp:ParasiteData.userinfo) {
 						if(tpp.name.equals(args[1])) {
-							sender.sendMessage("¡ìbÍæ¼Ò ¡ìc"+args[1]+" ¡ìbµÄ¸ĞÈ¾Çé¿ö£º");
+							sender.sendMessage("Â§bç©å®¶ Â§c"+args[1]+" Â§bçš„æ„ŸæŸ“æƒ…å†µï¼š");
 							for(int i=0;i<6;i++) {
-								String s="¡ìa"+ParasiteData.ParasiteName[i]+"¡ìb: ¡ìd";
+								String s="Â§a"+ParasiteData.ParasiteName[i]+"Â§b: Â§d";
 								if(tpp.time[i]==0) {
-									s=s+"Î´¸ĞÈ¾";
+									s=s+"æœªæ„ŸæŸ“";
 								}else{
 									if(tpp.time[i]<5000) {
-										s=s+"Ç±·üÆÚ";
+										s=s+"æ½œä¼æœŸ";
 									}else if(tpp.time[i]>=5000 && tpp.time[i]<18000) {
-										s=s+"Ò»½×¶Î";
+										s=s+"ä¸€é˜¶æ®µ";
 									}else if(tpp.time[i]>=18000 && tpp.time[i]<20000) {
-										s=s+"¶ş½×¶Î";
+										s=s+"äºŒé˜¶æ®µ";
 									}else if(tpp.time[i]>=20000 && tpp.time[i]<22000) {
-										s=s+"Èı½×¶Î";
+										s=s+"ä¸‰é˜¶æ®µ";
 									}else {
-										s=s+"ËÄ½×¶Î";
+										s=s+"å››é˜¶æ®µ";
 									}
 								}
-								s=s+"¡ìa, ÖÎÁÆºóÒÅÖ¢¡ìb: ¡ìd";
+								s=s+"Â§a, æ²»ç–—åé—ç—‡Â§b: Â§d";
 								if(tpp.sequela[i]==0) {
-									s=s+"ÎŞ";
+									s=s+"æ— ";
 								}else {
-									s=s+"ÓĞ";
+									s=s+"æœ‰";
 								}
 								sender.sendMessage(s);
 							}
 							return true;
 						}
 					}
-					sender.sendMessage("¡ìa¸ÃÓÃ»§Î´¸ĞÈ¾ÈÎºÎ¼ÄÉú³æ");
+					sender.sendMessage("Â§aè¯¥ç”¨æˆ·æœªæ„ŸæŸ“ä»»ä½•å¯„ç”Ÿè™«");
 				}else {
-					sender.sendMessage("¡ìeÓÃ·¨: ¡ìa/para show <Íæ¼ÒID> ¡ìe²éÑ¯Íæ¼ÒµÄ¸ĞÈ¾Çé¿ö");
+					sender.sendMessage("Â§eç”¨æ³•: Â§a/para show <ç©å®¶ID> Â§eæŸ¥è¯¢ç©å®¶çš„æ„ŸæŸ“æƒ…å†µ");
 				}
 				return true;
 			}
 			if(args[0].equalsIgnoreCase("set")) {
 				if(sender instanceof Player) {
 					if(!((Player)sender).hasPermission("Parasite.set")) {
-						sender.sendMessage("¡ìeÄãÃ»ÓĞÈ¨ÏŞÖ´ĞĞÕâ¸öÖ¸Áî");
+						sender.sendMessage("Â§eä½ æ²¡æœ‰æƒé™æ‰§è¡Œè¿™ä¸ªæŒ‡ä»¤");
 						return false;
 					}
 				}
 				if(args.length==5) {
 					Player pl=Bukkit.getPlayer(args[1]);
 					if(pl==null) {
-						sender.sendMessage("¡ìe¸ÃÍæ¼Ò²»ÔÚÏß");
+						sender.sendMessage("Â§eè¯¥ç©å®¶ä¸åœ¨çº¿");
 						return false;
 					}
 					if(!pl.getName().equals(args[1])) {
-						sender.sendMessage("¡ìe¸ÃÍæ¼Ò²»ÔÚÏß");
+						sender.sendMessage("Â§eè¯¥ç©å®¶ä¸åœ¨çº¿");
 						return false;
 					}
 					int pid=0,lv=0;
@@ -214,7 +216,7 @@ public class Parasite extends JavaPlugin{
 					}
 					ParasiteCore pc=new ParasiteCore();
 					pc.setState(pl.getName(),pid,lv,type);
-					sender.sendMessage("¡ìa²Ù×÷³É¹¦");
+					sender.sendMessage("Â§aæ“ä½œæˆåŠŸ");
 				}else {
 					showcmdsethelp(sender);
 				}
@@ -228,22 +230,22 @@ public class Parasite extends JavaPlugin{
 			can[1]=pl.hasPermission("Parasite.show");
 			can[2]=pl.hasPermission("Parasite.reload");
 			if(!can[0] && !can[1] && !can[2]) {
-				sender.sendMessage("¡ìeÄãÃ»ÓĞÈ¨ÏŞÖ´ĞĞÕâ¸öÖ¸Áî");
+				sender.sendMessage("Â§eä½ æ²¡æœ‰æƒé™æ‰§è¡Œè¿™ä¸ªæŒ‡ä»¤");
 				return true;
 			}
 		}
-		sender.sendMessage("¡ìb²å¼ş°ïÖú:");
-		if(can[0]) sender.sendMessage("¡ìa/para set <Íæ¼ÒID> <¼ÄÉú³æ±àºÅ> <¸ĞÈ¾ÀàĞÍ> <¸ĞÈ¾µÈ¼¶> ¡ìeÉèÖÃ¸ĞÈ¾");
-		if(can[0]) sender.sendMessage("¡ìd±¸×¢: ¡ìeÊ¹ÓÃ¡ìa/para set ¡ìe²é¿´¸üÏêÏ¸µÄÊ¹ÓÃËµÃ÷");
-		if(can[1]) sender.sendMessage("¡ìa/para show <Íæ¼ÒID> ¡ìe²éÑ¯Íæ¼ÒµÄ¸ĞÈ¾Çé¿ö");
-		if(can[2]) sender.sendMessage("¡ìa/para reload ¡ìeÖØĞÂ¼ÓÔØÅäÖÃÎÄ¼ş");
+		sender.sendMessage("Â§bæ’ä»¶å¸®åŠ©:");
+		if(can[0]) sender.sendMessage("Â§a/para set <ç©å®¶ID> <å¯„ç”Ÿè™«ç¼–å·> <æ„ŸæŸ“ç±»å‹> <æ„ŸæŸ“ç­‰çº§> Â§eè®¾ç½®æ„ŸæŸ“");
+		if(can[0]) sender.sendMessage("Â§då¤‡æ³¨: Â§eä½¿ç”¨Â§a/para set Â§eæŸ¥çœ‹æ›´è¯¦ç»†çš„ä½¿ç”¨è¯´æ˜");
+		if(can[1]) sender.sendMessage("Â§a/para show <ç©å®¶ID> Â§eæŸ¥è¯¢ç©å®¶çš„æ„ŸæŸ“æƒ…å†µ");
+		if(can[2]) sender.sendMessage("Â§a/para reload Â§eé‡æ–°åŠ è½½é…ç½®æ–‡ä»¶");
 		return false;
 	}
 	
 	public void showcmdsethelp(CommandSender sender) {
-		sender.sendMessage("¡ìeÓÃ·¨: ¡ìa/para set <Íæ¼ÒID> <¼ÄÉú³æ±àºÅ> <¸ĞÈ¾ÀàĞÍ> <¸ĞÈ¾µÈ¼¶> ¡ìeÉèÖÃ¸ĞÈ¾");
-		sender.sendMessage("¡ìb¼ÄÉú³æ±àºÅ: ¡ìd0.¹³³æ£¬1.»×³æ£¬2.ÑªÎü³æ£¬3.ÌĞ³æ£¬4.¹­ĞÎ³æ£¬5.Å±Ô­³æ");
-		sender.sendMessage("¡ìb¸ĞÈ¾ÀàĞÍ: ¡ìd0.ÆÕÍ¨¸ĞÈ¾£¬1.ÖÎÁÆºóµÄºóÒÅÖ¢");
-		sender.sendMessage("¡ìb¸ĞÈ¾µÈ¼¶: ¡ìd0.ÎŞ£¬1.Ç±·üÆÚ£¬2.Ò»½×¶Î£¬3.¶ş½×¶Î£¬4.Èı½×¶Î£¬5.ËÄ½×¶Î");
+		sender.sendMessage("Â§eç”¨æ³•: Â§a/para set <ç©å®¶ID> <å¯„ç”Ÿè™«ç¼–å·> <æ„ŸæŸ“ç±»å‹> <æ„ŸæŸ“ç­‰çº§> Â§eè®¾ç½®æ„ŸæŸ“");
+		sender.sendMessage("Â§bå¯„ç”Ÿè™«ç¼–å·: Â§d0.é’©è™«ï¼Œ1.è›”è™«ï¼Œ2.è¡€å¸è™«ï¼Œ3.ç»¦è™«ï¼Œ4.å¼“å½¢è™«ï¼Œ5.ç–ŸåŸè™«");
+		sender.sendMessage("Â§bæ„ŸæŸ“ç±»å‹: Â§d0.æ™®é€šæ„ŸæŸ“ï¼Œ1.æ²»ç–—åçš„åé—ç—‡");
+		sender.sendMessage("Â§bæ„ŸæŸ“ç­‰çº§: Â§d0.æ— ï¼Œ1.æ½œä¼æœŸï¼Œ2.ä¸€é˜¶æ®µï¼Œ3.äºŒé˜¶æ®µï¼Œ4.ä¸‰é˜¶æ®µï¼Œ5.å››é˜¶æ®µ");
 	}
 }
